@@ -1,0 +1,48 @@
+import type { Metadata } from "next";
+import { Inter, JetBrains_Mono, Oswald } from "next/font/google";
+import { Footer } from "@/components/footer";
+import { Nav } from "@/components/nav";
+import "./globals.css";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const oswald = Oswald({
+  variable: "--font-oswald",
+  subsets: ["latin"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Fit User | Get fit. Sleep. Help the pack.",
+  description:
+    "A simple 26-day habit marathon from Fit User LLC. Get fit, protect your sleep, and help others do the same. $100 pack shirt, $10 each group run, free coaching under 16.",
+  icons: {
+    icon: "/brand/mark-square.png",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html
+      lang="en"
+      className={`${inter.variable} ${oswald.variable} ${jetbrainsMono.variable} h-full antialiased`}
+    >
+      <body className="flex min-h-full flex-col bg-black font-sans text-ink">
+        <Nav />
+        <main className="flex-1 pt-[4.25rem]">{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}
