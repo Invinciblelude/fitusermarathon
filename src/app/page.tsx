@@ -1,7 +1,9 @@
 import { ArmsPanel, BrandLook, BrandMarquee } from "@/components/brand-media";
+import { PayQr } from "@/components/pay-qr";
 import { ShirtMockup } from "@/components/shirt-mockup";
 import { logos } from "@/lib/brand";
 import { habits } from "@/lib/habits";
+import { CASH_APP_TAG, CASH_APP_URL } from "@/lib/pay";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -150,15 +152,23 @@ export default function Home() {
             $100 shirt. $10 a run. That’s the model.
           </h2>
           <p className="mt-5 text-lg text-muted">
-            No Stripe maze. You commit in person. The shirt locks you in. Each
-            group run pays the coach so encouragement doesn’t dry up. Under 16:
-            coaching is free. A parent or guardian signs them in.
+            No Stripe maze. Scan Cash App {CASH_APP_TAG} for the $100 shirt and
+            $10 each run, or pay cash at the park. Under 16: coaching is free. A
+            parent or guardian signs them in.
           </p>
-          <Link href="/commit" className="fu-btn mt-8 inline-flex">
-            Commit $100
-          </Link>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link href="/commit" className="fu-btn">
+              Commit $100
+            </Link>
+            <a href={CASH_APP_URL} className="fu-btn-ghost">
+              Cash App {CASH_APP_TAG}
+            </a>
+          </div>
         </div>
-        <ShirtMockup />
+        <div className="space-y-6">
+          <ShirtMockup />
+          <PayQr />
+        </div>
       </section>
 
       <section>

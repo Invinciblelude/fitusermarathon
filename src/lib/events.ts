@@ -120,7 +120,7 @@ export function calendarIcs(): string {
       `DTSTART:${icsStamp(run.date, run.time)}`,
       `DTEND:${icsStamp(run.date, run.time, 1)}`,
       `SUMMARY:${GROUP_RUN_TITLE} · ${run.time}`,
-      `DESCRIPTION:$10 in person if 16+. Under 16 free. ${GROUP_RUN_PLACE}.`,
+      `DESCRIPTION:$10 Cash App $fituser or cash if 16+. Under 16 free. ${GROUP_RUN_PLACE}.`,
       `LOCATION:${GROUP_RUN_PLACE}`,
       "END:VEVENT",
     );

@@ -93,7 +93,7 @@ export function SignupForm({ eventDate, onJoined }: SignupFormProps) {
           Your name is on the list. Check in daily. {done.eventDate ? `See you ${formatRunDay(done.eventDate)}.` : "Pick a run on the calendar if you want a group session."}
         </p>
         <p className="mt-4 text-sm text-muted">
-          16+: bring $100 for the shirt and $10 each run, in person.
+          16+: Cash App $fituser for the $100 shirt and $10 each run, or cash at the park.
         </p>
       </div>
     );
@@ -262,7 +262,7 @@ export function SignupForm({ eventDate, onJoined }: SignupFormProps) {
       </button>
       <p className="text-center text-xs text-muted">
         Your name and course show on the public list. Email stays off the site.
-        Shirt and run money are collected in person.
+        Shirt and run money: Cash App $fituser or cash at the park.
       </p>
     </form>
   );

@@ -28,8 +28,9 @@ export default async function JoinPage() {
       </h1>
       <p className="mt-4 max-w-2xl text-lg text-muted">
         Post this link. People pick a 6:00 PM weeknight or 6:00 AM Saturday, join
-        with name and email, and they show up on the pack list. Shirt money is in
-        person — $100 lock-in, $10 each run. Under 16 coaches free.{" "}
+        with name and email, and they show up on the pack list. Pay Cash App
+        $fituser — $100 lock-in, $10 each run — or cash at the park. Under 16
+        coaches free.{" "}
         <Link href="/flyer" className="text-white underline-offset-4 hover:underline">
           Print the flyer
         </Link>

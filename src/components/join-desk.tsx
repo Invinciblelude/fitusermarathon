@@ -2,6 +2,7 @@
 
 import { PackCalendar } from "@/components/pack-calendar";
 import { PackList } from "@/components/pack-list";
+import { PayQr } from "@/components/pay-qr";
 import { SignupForm } from "@/components/signup-form";
 import { upcomingGroupRuns } from "@/lib/events";
 import { loadLocalPack, mergePack } from "@/lib/pack-local";
@@ -40,7 +41,10 @@ export function JoinDesk({ initialPack }: JoinDeskProps) {
         <PackCalendar selected={selected} onSelect={setSelected} />
         <PackList people={pack} />
       </div>
-      <SignupForm eventDate={selected} onJoined={handleJoined} />
+      <div className="space-y-8">
+        <PayQr />
+        <SignupForm eventDate={selected} onJoined={handleJoined} />
+      </div>
     </div>
   );
 }

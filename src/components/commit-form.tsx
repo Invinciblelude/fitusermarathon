@@ -246,8 +246,8 @@ export function CommitForm() {
         {track === "pack" ? `Commit · $${SHIRT_USD} shirt` : "Commit · free youth coaching"}
       </button>
       <p className="text-center text-xs text-muted">
-        This is a signed promise. Shirt and run money are collected in person at
-        the group run.
+        This is a signed promise. Shirt and run money: Cash App $fituser or cash
+        at the group run.
       </p>
     </form>
   );

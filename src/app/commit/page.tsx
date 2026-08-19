@@ -1,6 +1,7 @@
 import { ArmsPanel } from "@/components/brand-media";
 import { CommitForm } from "@/components/commit-form";
 import { LivePackList } from "@/components/live-pack-list";
+import { PayQr } from "@/components/pay-qr";
 import { ShirtMockup } from "@/components/shirt-mockup";
 import { RUN_USD, SHIRT_USD } from "@/lib/commit";
 import { listPublicSignups } from "@/lib/signup-store";
@@ -21,7 +22,7 @@ export default async function CommitPage() {
             <p className="mt-4 max-w-2xl text-lg text-muted">
               This is how the coaching stays alive. ${SHIRT_USD} for the Fit User
               Marathon shirt. Then ${RUN_USD} each group run. Under 16: coaching is
-              free. In person.
+              free. Cash App $fituser or cash at the park.
             </p>
           </div>
           <div className="overflow-hidden border border-white/15">
@@ -49,7 +50,10 @@ export default async function CommitPage() {
               />
             </div>
           </div>
-          <CommitForm />
+          <div className="space-y-8">
+            <PayQr />
+            <CommitForm />
+          </div>
         </div>
 
         <section className="mt-16">

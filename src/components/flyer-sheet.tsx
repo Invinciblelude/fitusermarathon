@@ -1,3 +1,4 @@
+import { PayQr } from "@/components/pay-qr";
 import { logos } from "@/lib/brand";
 import { GROUP_RUN_PLACE } from "@/lib/events";
 import Image from "next/image";
@@ -49,11 +50,15 @@ export function FlyerSheet() {
           <div className="bg-black p-4">
             <p className="fu-kicker">16 and up</p>
             <p className="fu-display mt-1 text-xl font-semibold">$100 shirt · $10 a run</p>
-            <p className="mt-1 text-xs text-white/65">Pay in person. That keeps the coach in the game.</p>
+            <p className="mt-1 text-xs text-white/65">Cash App $fituser or cash. That keeps the coach in the game.</p>
           </div>
         </div>
 
-        <div className="relative mt-6 border border-white/20 p-4 sm:p-5">
+        <div className="relative mt-px border-y border-white/20">
+          <PayQr compact />
+        </div>
+
+        <div className="relative mt-5 border border-white/20 p-4 sm:p-5">
           <p className="fu-kicker">Want to help</p>
           <p className="fu-display mt-2 text-lg font-semibold sm:text-xl">
             Wear the shirt. Bring four. Be at the park.
