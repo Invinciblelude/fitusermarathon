@@ -1,6 +1,8 @@
+import { withBase } from "./base-path";
+
 export const logos = {
-  wordmarkWhite: "/brand/wordmark-white.png",
-  wordmarkBlack: "/brand/wordmark-black.png",
-  mark: "/brand/mark-square.png",
-  arms: "/brand/mark-arms-white.png",
+  wordmarkWhite: withBase("/brand/wordmark-white.png"),
+  wordmarkBlack: withBase("/brand/wordmark-black.png"),
+  mark: withBase("/brand/mark-square.png"),
+  arms: withBase("/brand/mark-arms-white.png"),
 } as const;

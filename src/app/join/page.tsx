@@ -1,4 +1,5 @@
 import { JoinDesk } from "@/components/join-desk";
+import { withBase } from "@/lib/base-path";
 import { listPublicSignups } from "@/lib/signup-store";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     title: "Join the Fit User pack",
     description:
       "Get fit. Sleep. Help others. Sign up, pick a 6pm or 6am run, and get on the list.",
-    images: ["/brand/mark-square.png"],
+    images: [withBase("/brand/mark-square.png")],
   },
 };
 

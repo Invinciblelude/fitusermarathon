@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono, Oswald } from "next/font/google";
 import type { CSSProperties } from "react";
 import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
+import { withBase } from "@/lib/base-path";
 import "./globals.css";
 
 const inter = Inter({
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
   description:
     "A 26-day habit marathon in Natomas from Fit User LLC. Tue/Thu 6pm and Saturday 6am at North Natomas Regional Park. $100 shirt, $10 a run, free coaching under 16.",
   icons: {
-    icon: "/brand/mark-square.png",
+    icon: withBase("/brand/mark-square.png"),
   },
 };
 
