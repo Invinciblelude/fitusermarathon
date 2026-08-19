@@ -14,12 +14,12 @@ export function Footer() {
             Join
           </Link>
           {" · "}
-          <Link href="/join#pack" className="text-white hover:text-white/70">
-            Pack
+          <Link href="/flyer" className="text-white hover:text-white/70">
+            Flyer
           </Link>
           {" · "}
-          <Link href="/commit" className="text-white hover:text-white/70">
-            $100 shirt
+          <Link href="/check-in" className="text-white hover:text-white/70">
+            Check in
           </Link>
         </p>
       </div>

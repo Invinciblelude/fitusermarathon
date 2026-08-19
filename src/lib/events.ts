@@ -1,4 +1,4 @@
-export const GROUP_RUN_PLACE = "Vince posts the meet-up before each run";
+export const GROUP_RUN_PLACE = "North Natomas Regional Park";
 export const GROUP_RUN_TITLE = "Fit User group run";
 export const SCHEDULE_BLURB =
   "Tue and Thu 6:00 PM after work. Saturday 6:00 AM. Never 9–5.";

@@ -7,7 +7,7 @@ import { BrandLockup } from "./logo";
 
 const links = [
   { href: "/join", label: "Join" },
-  { href: "/join#pack", label: "Pack" },
+  { href: "/flyer", label: "Flyer" },
   { href: "/check-in", label: "Check in" },
 ];
 

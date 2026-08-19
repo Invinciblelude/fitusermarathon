@@ -22,7 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Fit User | Get fit. Sleep. Help the pack.",
   description:
-    "A simple 26-day habit marathon from Fit User LLC. Get fit, protect your sleep, and help others do the same. $100 pack shirt, $10 each group run, free coaching under 16.",
+    "A 26-day habit marathon in Natomas from Fit User LLC. Tue/Thu 6pm and Saturday 6am at North Natomas Regional Park. $100 shirt, $10 a run, free coaching under 16.",
   icons: {
     icon: "/brand/mark-square.png",
   },

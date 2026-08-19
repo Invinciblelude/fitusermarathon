@@ -1,6 +1,7 @@
 import { JoinDesk } from "@/components/join-desk";
 import { listPublicSignups } from "@/lib/signup-store";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Suspense } from "react";
 
 export const dynamic = "force-dynamic";
@@ -29,7 +30,11 @@ export default async function JoinPage() {
       <p className="mt-4 max-w-2xl text-lg text-muted">
         Post this link. People pick a 6:00 PM weeknight or 6:00 AM Saturday, join
         with name and email, and they show up on the pack list. Shirt money is in
-        person — $100 lock-in, $10 each run. Under 16 coaches free.
+        person — $100 lock-in, $10 each run. Under 16 coaches free.{" "}
+        <Link href="/flyer" className="text-white underline-offset-4 hover:underline">
+          Print the flyer
+        </Link>
+        .
       </p>
       <div className="mt-10">
         <Suspense fallback={<p className="text-muted">Loading the pack…</p>}>

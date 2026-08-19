@@ -1,4 +1,4 @@
-import { ArmsPanel, BrandLook, BrandMarquee, FramedShot } from "@/components/brand-media";
+import { ArmsPanel, BrandLook, BrandMarquee } from "@/components/brand-media";
 import { ShirtMockup } from "@/components/shirt-mockup";
 import { logos } from "@/lib/brand";
 import { habits } from "@/lib/habits";
@@ -54,8 +54,8 @@ export default function Home() {
               <Link href="/join" className="fu-btn">
                 Join the pack
               </Link>
-              <Link href="/commit" className="fu-btn-ghost">
-                $100 shirt
+              <Link href="/flyer" className="fu-btn-ghost">
+                Flyer
               </Link>
             </div>
           </div>
@@ -86,27 +86,23 @@ export default function Home() {
       </section>
 
       <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2">
-        <FramedShot
-          src={logos.packShot}
-          alt="Fit User pack training — people in the work"
-          priority
-        />
+        <ArmsPanel line="Better together than alone" />
         <div>
           <p className="fu-kicker">The pack</p>
           <h2 className="fu-display mt-3 text-3xl font-semibold sm:text-5xl">
-            Same energy. Simpler product.
+            Natomas. 26 days. Show up.
           </h2>
           <p className="mt-5 text-lg text-muted">
-            The old app is gone. This site is what works now: one habit, a daily
-            check-in, and in-person coaching funded by the shirt. You get fit. I
-            stay in the work with you. Kids under 16 coach free.
+            One habit, a daily check-in, and in-person coaching funded by the shirt.
+            You get fit. Kids under 16 coach free. Tuesday and Thursday 6pm,
+            Saturday 6am, North Natomas Regional Park.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link href="/join" className="fu-btn">
               Join the pack
             </Link>
-            <Link href="/course" className="fu-btn-ghost">
-              See the course
+            <Link href="/flyer" className="fu-btn-ghost">
+              Flyer
             </Link>
           </div>
         </div>

@@ -84,26 +84,3 @@ export function BrandLook() {
     </div>
   );
 }
-
-export function FramedShot({
-  src,
-  alt,
-  priority = false,
-}: {
-  src: string;
-  alt: string;
-  priority?: boolean;
-}) {
-  return (
-    <div className="relative aspect-[4/5] overflow-hidden border border-white/15 bg-black">
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        priority={priority}
-        className="object-cover object-top"
-        sizes="(min-width: 1024px) 40vw, 100vw"
-      />
-    </div>
-  );
-}

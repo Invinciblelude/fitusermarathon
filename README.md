@@ -1,8 +1,13 @@
-# Fit User Marathon
+# Fit User — Natomas pack
 
-A 26-day habit marathon site from **Fit User LLC**. Pick one bad habit, run a tiny daily swap, and finish 26.2 habit miles.
+A 26-day habit marathon from **Fit User LLC**. Pick one habit, check in daily, and show up with the pack.
 
 Fitness doesn't have to be hard. The best is in you.
+
+**When:** Tuesday and Thursday 6:00 PM, Saturday 6:00 AM  
+**Where:** North Natomas Regional Park  
+**16+:** $100 shirt, $10 each group run, in person  
+**Under 16:** coaching free (parent or guardian signs)
 
 ## Run locally
 
@@ -13,10 +18,13 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## What you can do
+## Pages
 
-- Choose a habit course (couch, sleep, food, smoke, drink, scroll, workouts, sugar)
-- Join with a runner name
-- Check in each day: done, showed up, or water station
-- Follow the 26-mile course map
-- Optional $100 pack shirt ($10 each group run; under 16 coaching is free)
+- `/` home
+- `/join` calendar, signup, pack list
+- `/flyer` one-page flyer to print
+- `/check-in` daily mile
+- `/commit` $100 shirt pledge
+- `/course` 26-day map
+
+Signups save in `data/signups.json` (emails stay off the public list).

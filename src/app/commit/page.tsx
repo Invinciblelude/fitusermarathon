@@ -1,10 +1,15 @@
 import { ArmsPanel } from "@/components/brand-media";
 import { CommitForm } from "@/components/commit-form";
-import { PackRoster } from "@/components/pack-roster";
+import { PackList } from "@/components/pack-list";
 import { ShirtMockup } from "@/components/shirt-mockup";
 import { RUN_USD, SHIRT_USD } from "@/lib/commit";
+import { listPublicSignups } from "@/lib/signup-store";
 
-export default function CommitPage() {
+export const dynamic = "force-dynamic";
+
+export default async function CommitPage() {
+  const pack = await listPublicSignups();
+
   return (
     <div>
       <section className="relative overflow-hidden border-b border-white/10">
@@ -18,7 +23,7 @@ export default function CommitPage() {
             <p className="mt-4 max-w-2xl text-lg text-muted">
               This is how the coaching stays alive. ${SHIRT_USD} for the Fit User
               Marathon shirt. Then ${RUN_USD} each group run. Under 16: coaching is
-              free. In person. No app required.
+              free. In person.
             </p>
           </div>
           <div className="overflow-hidden border border-white/15">
@@ -50,13 +55,7 @@ export default function CommitPage() {
         </div>
 
         <section className="mt-16">
-          <h2 className="fu-display text-2xl font-semibold">Who’s already in</h2>
-          <p className="mt-2 text-muted">
-            Names on this list said yes. Shirt money and run money keep the coach in the game.
-          </p>
-          <div className="mt-6">
-            <PackRoster />
-          </div>
+          <PackList people={pack} />
         </section>
       </div>
     </div>
