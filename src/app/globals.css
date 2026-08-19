@@ -68,7 +68,7 @@ body {
 }
 
 .fu-watermark {
-  background-image: url("/brand/mark-square.png");
+  background-image: var(--fu-mark);
   background-size: 160px;
   background-repeat: repeat;
   opacity: 0.08;

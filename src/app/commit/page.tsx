@@ -1,11 +1,9 @@
 import { ArmsPanel } from "@/components/brand-media";
 import { CommitForm } from "@/components/commit-form";
-import { PackList } from "@/components/pack-list";
+import { LivePackList } from "@/components/live-pack-list";
 import { ShirtMockup } from "@/components/shirt-mockup";
 import { RUN_USD, SHIRT_USD } from "@/lib/commit";
 import { listPublicSignups } from "@/lib/signup-store";
-
-export const dynamic = "force-dynamic";
 
 export default async function CommitPage() {
   const pack = await listPublicSignups();
@@ -55,7 +53,7 @@ export default async function CommitPage() {
         </div>
 
         <section className="mt-16">
-          <PackList people={pack} />
+          <LivePackList initialPack={pack} />
         </section>
       </div>
     </div>

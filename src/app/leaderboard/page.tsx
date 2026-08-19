@@ -1,9 +1,7 @@
 import { ArmsMark } from "@/components/logo";
-import { PackList } from "@/components/pack-list";
+import { LivePackList } from "@/components/live-pack-list";
 import { YourMiles } from "@/components/your-miles";
 import { listPublicSignups } from "@/lib/signup-store";
-
-export const dynamic = "force-dynamic";
 
 export default async function LeaderboardPage() {
   const pack = await listPublicSignups();
@@ -18,7 +16,7 @@ export default async function LeaderboardPage() {
           <p className="mt-2 text-muted">Who signed up. Miles are yours when you check in.</p>
         </div>
         <YourMiles />
-        <PackList people={pack} />
+        <LivePackList initialPack={pack} />
       </div>
     </div>
   );

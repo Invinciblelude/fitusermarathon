@@ -4,8 +4,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 
-export const dynamic = "force-dynamic";
-
 export const metadata: Metadata = {
   title: "Join the Fit User pack",
   description:

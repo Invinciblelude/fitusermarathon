@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  downloadCalendarIcs,
   formatRunDay,
   isoDate,
   isGroupRunDate,
@@ -121,9 +122,13 @@ export function PackCalendar({ selected, onSelect }: PackCalendarProps) {
           </li>
         ))}
       </ul>
-      <a href="/api/calendar" className="mt-6 inline-block text-sm text-white/70 hover:text-white">
+      <button
+        type="button"
+        onClick={downloadCalendarIcs}
+        className="mt-6 text-sm text-white/70 hover:text-white"
+      >
         Add pack runs to your phone calendar →
-      </a>
+      </button>
     </div>
   );
 }

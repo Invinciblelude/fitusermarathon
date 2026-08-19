@@ -3,6 +3,8 @@
 import { shirtSizes, type ShirtSize } from "@/lib/commit";
 import { formatRunDay, slotForDate } from "@/lib/events";
 import { habits } from "@/lib/habits";
+import { withBase } from "@/lib/base-path";
+import { saveLocalSignup } from "@/lib/pack-local";
 import { startMarathon } from "@/lib/store";
 import type { PublicSignup, SignupKind } from "@/lib/signups";
 import { useSearchParams } from "next/navigation";
@@ -39,35 +41,47 @@ export function SignupForm({ eventDate, onJoined }: SignupFormProps) {
     formEvent.preventDefault();
     setError("");
     setPending(true);
+    const payload = {
+      name,
+      email,
+      habitId,
+      kind,
+      shirtSize: kind === "pack" ? shirtSize : undefined,
+      age: kind === "youth" ? Number(age) : undefined,
+      guardianName: kind === "youth" ? guardianName : undefined,
+      eventDate,
+      why,
+    };
     try {
-      const response = await fetch("/api/signups", {
+      const response = await fetch(withBase("/api/signups"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          email,
-          habitId,
-          kind,
-          shirtSize: kind === "pack" ? shirtSize : undefined,
-          age: kind === "youth" ? Number(age) : undefined,
-          guardianName: kind === "youth" ? guardianName : undefined,
-          eventDate,
-          why,
-        }),
+        body: JSON.stringify(payload),
       });
-      const payload = (await response.json()) as { signup?: PublicSignup; error?: string };
-      if (!response.ok || !payload.signup) {
-        setError(payload.error ?? "Could not join.");
+      if (response.ok) {
+        const body = (await response.json()) as { signup?: PublicSignup };
+        if (body.signup) {
+          finishJoin(body.signup);
+          return;
+        }
+      }
+      if (response.status === 404 || response.status === 405) {
+        finishJoin(saveLocalSignup(payload));
         return;
       }
-      startMarathon({ username: name, habitId, why });
-      setDone(payload.signup);
-      onJoined(payload.signup);
+      const body = (await response.json().catch(() => ({}))) as { error?: string };
+      setError(body.error ?? "Could not join.");
     } catch {
-      setError("Could not reach the pack list. Try again.");
+      finishJoin(saveLocalSignup(payload));
     } finally {
       setPending(false);
     }
+  }
+
+  function finishJoin(person: PublicSignup) {
+    startMarathon({ username: name, habitId, why });
+    setDone(person);
+    onJoined(person);
   }
 
   if (done) {

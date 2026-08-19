@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Oswald } from "next/font/google";
+import type { CSSProperties } from "react";
 import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
 import "./globals.css";
@@ -37,6 +38,11 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${oswald.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      style={
+        {
+          "--fu-mark": `url("${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/brand/mark-square.png")`,
+        } as CSSProperties
+      }
     >
       <body className="flex min-h-full flex-col bg-black font-sans text-ink">
         <Nav />

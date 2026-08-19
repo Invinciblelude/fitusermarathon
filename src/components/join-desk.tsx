@@ -4,9 +4,10 @@ import { PackCalendar } from "@/components/pack-calendar";
 import { PackList } from "@/components/pack-list";
 import { SignupForm } from "@/components/signup-form";
 import { upcomingGroupRuns } from "@/lib/events";
+import { loadLocalPack, mergePack } from "@/lib/pack-local";
 import type { PublicSignup } from "@/lib/signups";
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface JoinDeskProps {
   initialPack: PublicSignup[];
@@ -19,6 +20,10 @@ export function JoinDesk({ initialPack }: JoinDeskProps) {
     searchParams.get("run") || firstRun,
   );
   const [pack, setPack] = useState(initialPack);
+
+  useEffect(() => {
+    setPack(mergePack(initialPack, loadLocalPack()));
+  }, [initialPack]);
 
   function handleJoined(person: PublicSignup) {
     setPack((current) => {

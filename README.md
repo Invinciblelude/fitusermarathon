@@ -2,6 +2,8 @@
 
 A 26-day habit marathon from **Fit User LLC**. Pick one habit, check in daily, and show up with the pack.
 
+Live site: [https://invinciblelude.github.io/fitusermarathon/](https://invinciblelude.github.io/fitusermarathon/)
+
 Fitness doesn't have to be hard. The best is in you.
 
 **When:** Tuesday and Thursday 6:00 PM, Saturday 6:00 AM  
